@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../common/header";
 import Footer from "../common/footer";
+import { Link } from "react-router-dom";
 function Ideas(props){
     const [cityfilter,setcityfilter]=useState("any");
     const [categoryfilter,setcategoryfilter]=useState("any");
@@ -50,7 +51,7 @@ setfilteredposts(v);
         <button type="submit">Apply filter</button>
         </form>
         <ul>
-            {filteredposts.map((p)=>{return<div key={Math.random()}><h1>{p.name}</h1><h1>{p.city}</h1><h1>{p.category}</h1><h1>{p.content}</h1><span></span><span></span></div>})}
+            {filteredposts.map((p)=>{return<div key={Math.random()}><h1>{p.name}</h1><h1>{p.city}</h1><h1>{p.category}</h1><h1>{p.content.trim(0,100)}</h1></div>})}
         </ul>
         <Footer></Footer>
     </div>
