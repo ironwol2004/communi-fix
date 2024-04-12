@@ -10,12 +10,12 @@ import axios from "axios";
 function App() {
   const [posts,setPosts]=useState([]);
   async function getposts(){
-      const r=await axios.get("https://localhost:5000/getposts");
+      const r=await axios.get("http://localhost:5000/getposts");
       setPosts(r.data);
   }
   useEffect(()=>{getposts()},[]);
   async function addnewpost(newpost){
-    const r = await axios.post("https://localhost:5000/getposts",{post:newpost});
+    const r = await axios.post("http://localhost:5000/addnewpost",{post:newpost});
     getposts();
     alert(r.data);
   }
