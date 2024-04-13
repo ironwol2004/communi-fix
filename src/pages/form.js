@@ -31,16 +31,16 @@ function Form(props){
         <form onSubmit={submitting} className="flex-col mx-4 mb-24 my-4 gap-4 w-2/5 bg-violet-100 p-5 rounded-3xl">
             <div className=" flex col-span-full mb-4">
             <label className="w-2/5 text-lg font-bold">Name :</label>
-            <input type="text" onChange={eventHandler} className="w-3/5" value={newpost.name} name="name"></input></div>
+            <input type="text"  onChange={eventHandler} className="w-3/5 p-2" value={newpost.name} name="name"></input></div>
             <div className=" flex col-span-full mb-4">
             <label className="w-2/5 text-lg font-bold">City :</label>
-            <input type="text" className="w-3/5" name="city" onChange={eventHandler} value={newpost.city}></input></div>
+            <input type="text" className="w-3/5 p-2" name="city" onChange={eventHandler} value={newpost.city}></input></div>
             <div className=" flex col-span-full mb-4">
             <label className="w-2/5 text-lg font-bold">Category :</label>
-            <input className="w-3/5" type="text" name="category" value={newpost.category} onChange={eventHandler}></input></div>
+            <input className="w-3/5 p-2" type="text" name="category" value={newpost.category} onChange={eventHandler}></input></div>
             <div className=" flex col-span-full mb-4">
             <label className="w-2/5 text-lg font-bold">Issue :</label>
-            <textarea className="w-3/5 h-60" type="text" onChange={eventHandler} value={newpost.content} name="content"></textarea></div>
+            <textarea className="w-3/5 p-2 h-60" type="text" onChange={eventHandler} value={newpost.content} name="content"></textarea></div>
             <div className="flex justify-center gap-24">
             <button className="p-2 m-1 rounded-3xl bg-violet-600 text-white w-36 font-bold" type="submit">Add Post</button>
             <button className="p-2 m-1 rounded-3xl bg-violet-600 text-white w-36 font-bold" type="reset">Reset</button>
