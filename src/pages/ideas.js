@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../common/header";
 import Footer from "../common/footer";
+import { Link } from "react-router-dom";
+import Card from "../common/card";
 function Ideas(props){
     const [cityfilter,setcityfilter]=useState("any");
     const [categoryfilter,setcategoryfilter]=useState("any");
@@ -40,18 +42,25 @@ setfilteredposts(v);
     },[]);
     return <div>
         <Header></Header>
-        <form onSubmit={submitting}>
-        <select name="city" value={cityfilter} onChange={(e)=>{setcityfilter(e.target.value)}}>City
+        <div className="flex justify-center my-6">
+            <div className="flex-col justify-start gap-5">
+        <form  onSubmit={submitting} className="flex bg-slate-100 p-2 justify-center gap-12">
+        <div className="flex gap-5 ">
+        <label className="text-lg font-bold">City</label>
+        <select name="city" className="border-solid border-black" value={cityfilter} onChange={(e)=>{setcityfilter(e.target.value)}}>
             {cities.map((c)=>{return <option key={c} value={c}>{c}</option>})}
-        </select>
-        <select name="category" value={categoryfilter} onChange={(e)=>{setcategoryfilter(e.target.value)}}>Category
+        </select></div>
+        <div className="flex gap-5">
+        <label className="text-lg font-bold">Category</label>
+        <select name="category" className="border-solid border-black" value={categoryfilter} onChange={(e)=>{setcategoryfilter(e.target.value)}}>Category
             {categories.map((c)=>{return <option key={c} value={c}>{c}</option>})}
-        </select>
-        <button type="submit">Apply filter</button>
+        </select></div>
+        <button type="submit" className="text-white w-36 bg-violet-600 text-lg rounded-3xl">Apply filter</button>
         </form>
-        <ul>
-            {filteredposts.map((p)=>{return<div key={Math.random()}><h1>{p.name}</h1><h1>{p.city}</h1><h1>{p.category}</h1><h1>{p.content}</h1><span></span><span></span></div>})}
-        </ul>
+        <div className="flex justify-center">
+        <ul className="grid grid-cols-2 my-6">
+            {filteredposts.map((p)=>{return<Card key={Math.random()} p={p}></Card>})}
+        </ul></div></div></div>
         <Footer></Footer>
     </div>
 }
