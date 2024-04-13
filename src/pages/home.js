@@ -20,7 +20,7 @@ function Home(props){
     <div className="text-red-850 text-3xl font-bold">
         <Typewriter
             options={{
-                strings: ['Community Problem', 'Investor Collaoration', 'Feasible Solution'],
+                strings: ['Community Problem', 'Investor Collaboration', 'Feasible Solution','Mutual Benefits'],
                 autoStart: true,
                 loop: true,
                 delay: 50,

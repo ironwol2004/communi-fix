@@ -28,7 +28,7 @@ function Form(props){
     return <div>
         <Header></Header>
         <div className="flex justify-center">
-        <form onSubmit={submitting} className="flex-col mx-4 my-4 gap-4 w-2/5 bg-violet-100 p-5 rounded-3xl">
+        <form onSubmit={submitting} className="flex-col mx-4 mb-24 my-4 gap-4 w-2/5 bg-violet-100 p-5 rounded-3xl">
             <div className=" flex col-span-full mb-4">
             <label className="w-2/5 text-lg font-bold">Name :</label>
             <input type="text" onChange={eventHandler} className="w-3/5" value={newpost.name} name="name"></input></div>
