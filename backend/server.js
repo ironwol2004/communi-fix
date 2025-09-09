@@ -3,7 +3,7 @@ const bodyParser=require("body-parser");
 const mongoose=require("mongoose");
 const cors=require("cors");
 const app=express();
-mongoose.connect("mongodb+srv://admin-ironwol:IronWol2004@ironwol.znds0nw.mongodb.net/moye_moye",{useNewUrlParser:true});
+mongoose.connect("",{useNewUrlParser:true});
 app.use(cors());
 app.use(express.json());
 const PostSchema = new mongoose.Schema({
